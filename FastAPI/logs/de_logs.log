@@ -1,0 +1,6 @@
+2024-03-18 10:14:36,852 - INFO - MNIST Classification startup
+2024-03-18 10:14:37,929 - INFO - API Services started
+2024-03-18 10:14:39,669 - INFO - MNIST Classification startup
+2024-03-18 10:15:19,368 - INFO - API: /getClassificationResults started
+2024-03-18 10:15:19,369 - INFO - Saved image into local directory ./temp/3.png
+2024-03-18 10:15:19,506 - INFO - API: /getClassificationResults has been completed

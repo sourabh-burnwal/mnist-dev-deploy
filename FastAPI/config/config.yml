@@ -1,0 +1,11 @@
+PROJECT_NAME: "MNIST Classification"
+
+API:
+  host: 0.0.0.0
+  port: 8000
+  reload: True
+  static_dir: "./temp"
+
+MODEL:
+  pt_model_path: "models/new_model.pt"
+  onnx_model_path: "models/new_model.onnx"

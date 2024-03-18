@@ -1,0 +1,26 @@
+name: "mnist"
+platform: "tensorrt_plan"
+max_batch_size: 1
+
+input [
+	{
+		name: "onnx::Gemm_0"
+		data_type: TYPE_FP32
+		dims: [784]
+	}
+]
+
+output [
+	{
+		name: "12"
+		data_type: TYPE_FP32
+		dims: [10]
+	}
+]
+
+instance_group: [
+	{
+		kind: KIND_GPU
+		count: 1
+	}
+]

@@ -1,0 +1,24 @@
+# FROM python:3.8.18-slim as api_server
+FROM nvcr.io/nvidia/pytorch:22.10-py3
+RUN rm -rf /opt/pytorch  # remove 1.2GB dir
+
+ARG DEBIAN_FRONTEND=noninteractive
+# RUN apt-get update
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+# RUN apt-get install ffmpeg libsm6 libxext6 -y
+
+RUN apt-get install tzdata
+ENV TZ=Asia/Kolkata
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+WORKDIR /app
+COPY docker_requirements.txt /app/
+
+RUN pip install -r docker_requirements.txt
+
+COPY ./ /app/
+
+EXPOSE 8000
+
+RUN chmod +x entrypoint.sh
+ENTRYPOINT [ "./entrypoint.sh" ]
