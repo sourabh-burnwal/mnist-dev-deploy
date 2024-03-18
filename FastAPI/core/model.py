@@ -150,20 +150,8 @@ class Classification:
 
 
 if __name__ == '__main__':
-    # Model Training
-    # classification_obj = Classification()
-    # model_path = "new_model.pt"
-    # classification_obj.train(model_path=model_path)
-
-    # Model Inference
-    # model_path = "../models/new_model.pt"
-    # classification_obj = Classification()
-    # classification_obj.load_pt_model(model_path=model_path)
-    # img_path = "/home/pavan/Mialo/my/sourabh_assigment/test_data/3.png"
-    # classification_obj.predict(image_path=img_path)
-
     model_path = "../models/new_model.onnx"
     classification_obj = Classification()
     classification_obj.load_onnx_model(model_path=model_path)
-    img_path = "/home/pavan/Mialo/my/sourabh_assigment/test_data/3.png"
+    img_path = "test_data/3.png"
     classification_obj.predict_onnx(image_path=img_path)
